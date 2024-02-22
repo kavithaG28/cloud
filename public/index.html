@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IoT Application</title>
+</head>
+<body>
+    <h1>IoT Application</h1>
+    <form id="registerForm">
+        <fieldset>
+            <legend>Register Device</legend>
+            Device ID: <input type="text" name="deviceId" required>
+            Type: <input type="text" name="deviceType" required>
+            <button type="submit">Register</button>
+        </fieldset>
+    </form>
+    <form id="sendDataForm">
+        <fieldset>
+            <legend>Send Data</legend>
+            Device ID: <input type="text" name="deviceId" required>
+            Data: <input type="text" name="data" required>
+            <button type="submit">Send Data</button>
+        </fieldset>
+    </form>
+    <form id="sendCommandForm">
+        <fieldset>
+            <legend>Send Command</legend>
+            Device ID: <input type="text" name="deviceId" required>
+            Command: <input type="text" name="command" required>
+            <button type="submit">Send Command</button>
+        </fieldset>
+    </form>
+
+    <div id="response"></div>
+
+    <script>
+        // Helper function to post data to the server
+        async function postData(url = '', data = {}) {
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+            return response.json();
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const deviceId = this.deviceId.value;
+            const deviceType = this.deviceType.value;
+            try {
+                const response = await postData('/register', { deviceId, deviceType });
+                document.getElementById('response').innerText = 'Device registered successfully.';
+            } catch (error) {
+                document.getElementById('response').innerText = 'Error registering device.';
+            }
+        });
+
+        document.getElementById('sendDataForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const deviceId = this.deviceId.value;
+            const data = this.data.value;
+            try {
+                const response = await postData('/data', { deviceId, data });
+                document.getElementById('response').innerText = 'Data sent successfully.';
+            } catch (error) {
+                document.getElementById('response').innerText = 'Error sending data.';
+            }
+        });
+
+        document.getElementById('sendCommandForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const deviceId = this.deviceId.value;
+            const command = this.command.value;
+            try {
+                const response = await postData('/command', { deviceId, command });
+                document.getElementById('response').innerText = 'Command sent successfully.';
+            } catch (error) {
+                document.getElementById('response').innerText = 'Error sending command.';
+            }
+        });
+    </script>
+</body>
+</html>
