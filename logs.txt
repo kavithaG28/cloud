@@ -1,0 +1,23 @@
+2024-02-16T05:03:30.682Z: Registered device: sensor_01 of type: temperature_sensor
+2024-02-16T05:08:23.304Z: Data from sensor_01: "23.5"
+2024-02-16T05:09:16.238Z: Command to actuatorA1: ON
+2024-02-16T05:23:33.457Z: Registered device: sensor_2 of type: humidity_sensor
+2024-02-16T05:23:35.805Z: Data from sensor_2: "67.9"
+2024-02-16T05:23:37.044Z: Command to vent: off
+2024-02-20T05:22:50.386Z: Registered device: device 1 of type: light
+2024-02-20T05:22:53.016Z: Data from device 1: "dark"
+2024-02-20T05:22:54.328Z: Command to device 1: on
+2024-02-20T05:35:47.992Z: Registered device: device2 of type: tap
+2024-02-20T05:36:16.724Z: Data from device2: "full"
+2024-02-20T05:36:24.973Z: Command to device2: off
+2024-02-20T05:47:55.470Z: Registered device: device123 of type: sensor
+2024-02-20T06:07:56.855Z: Registered device: sensor 1 of type: light
+2024-02-20T06:07:57.653Z: Data from sensor 1: "bright"
+2024-02-20T06:08:06.996Z: Command to sensor 1: off
+2024-02-20T06:12:40.179Z: Data from sensor_2: "67.9"
+2024-02-20T06:12:45.924Z: Command to sensor_2: off
+2024-02-20T06:18:59.128Z: Data from sensor_2: "67.9"
+2024-02-20T06:19:03.692Z: Command to sensor_2: off
+2024-02-20T06:20:38.611Z: Registered device: Device 5 of type: fan
+2024-02-20T06:21:15.402Z: Data from Device 5: "Hot"
+2024-02-20T06:21:46.207Z: Command to Device 5: on

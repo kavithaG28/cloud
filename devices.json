@@ -1,0 +1,30 @@
+[
+    {
+        "deviceId": "sensor_01",
+        "deviceType": "temperature_sensor"
+    },
+    {
+        "deviceId": "sensor_2",
+        "deviceType": "humidity_sensor"
+    },
+    {
+        "deviceId": "device 1",
+        "deviceType": "light"
+    },
+    {
+        "deviceId": "device2",
+        "deviceType": "tap"
+    },
+    {
+        "deviceId": "device123",
+        "deviceType": "sensor"
+    },
+    {
+        "deviceId": "sensor 1",
+        "deviceType": "light"
+    },
+    {
+        "deviceId": "Device 5",
+        "deviceType": "fan"
+    }
+]
